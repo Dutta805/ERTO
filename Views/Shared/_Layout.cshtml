@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Content/boot")
+    @Scripts.Render("~/Content/bootJS")
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div style="background-image:url(@Url.Content("~/Content/Images/back_01.jpg")">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("E-RTO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Services", "Services", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Feedback", "Feedback", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="container">
+            <div class="jumbotron1">
+
+                <div class="row">
+                    <div class="col-md-2 bg-faded">
+                        <img src="@Url.Content("~/Content/Images/rto_01.png")" class="img-circle" height="220" width="200">
+                    </div>
+                    <div class="col-md-10">
+                        <h3>Welcome to E-RTO</h3>
+
+                        <p class="lead">
+                            RTO Management System has been designed to automate the process of registration
+                            of vehicle and issuing driving license process.
+                            System can make the daily activities efficient and providing the fast response to store and retrieve information.
+                        <p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+
+
+        </div>
+
+        <!---footer--->
+        <div class="jumbotronfooter" style="background-color:black">
+            <div class="container1">
+                <div class="row">
+                    <div class="footer-grids">
+                        <div class="col-md-1 footer-grid"></div>
+                        <div class="col-md-3 footer-grid">
+                            <h4>Our Pages</h4>
+                            <ul>
+                                <li><a href="#"> Home </a></li>
+                                <li><a href="#">Registration</a></li>
+                                <li><a href="#"> RTO Forms </a></li>
+
+
+                            </ul>
+                        </div>
+                        <div class="col-md-3 footer-grid">
+                            <h4>Our Services</h4>
+                            <ul>
+
+                                <li><a href="#">License</a></li>
+                                <li><a href="#"> Permit </a></li>
+                                <li><a href="#">Taxation</a></li>
+
+
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4 footer-grid">
+                            <h4>Reach Us</h4>
+                            <ul>
+                                <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i><a href="#">Allahabad,UttarPradesh,INDIA</a></li>
+                                <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i><a href="#">+91-8196862020</a></li>
+                                <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:sunil.sonu112@gmail.com"> sunil.sonu112@gmail.com</a></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="jumbotronfooter bg-primary">
+            <div class="container1">
+                <div class="row">
+                    <div class="col-md-6 social-icon label text-left">
+                        <span>Follow Us</span>
+                        <a href="#"><i class="icon"></i></a>
+                        <a href="#"><i class="icon1"></i></a>
+                        <a href="#"><i class="icon2"></i></a>
+                        <a href="#"><i class="icon3"></i></a>
+                    </div>
+                    <div style="margin-top:15px;" class="col-md-6 text-center">
+                        <h4>&copy; @DateTime.Now.Year - e-RTO System | Developed By :Sunil Kumar Pandey</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+        </body>
+</html>
